@@ -68,11 +68,11 @@ gulp.task("copy", function () {
 
 gulp.task("css", function () {
   return gulp.src("source/css/style.css")
+    /*.pipe(gulp.dest("build/css"))*/
+    //.pipe(csso())
+    //.pipe(rename("style.min.css"))
     .pipe(gulp.dest("build/css"))
-    .pipe(csso())
-    .pipe(rename("style.min.css"))
-    .pipe(gulp.dest("build/css"))
-    .pipe(server.stream());
+    /*.pipe(server.stream());*/
 });
 
 /*
