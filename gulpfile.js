@@ -16,6 +16,15 @@ var csso = require("gulp-csso");
 var server = require("browser-sync").create();
 const htmlmin = require('gulp-htmlmin');
 
+/*var decomment = require('gulp-decomment');*/
+/*
+gulp.task('default', function () {
+  return gulp.src('input.js')
+    .pipe(decomment({trim: true}))
+    .pipe(gulp.dest('dest'));
+});
+*/
+
 gulp.task('htmlmin', () => {
   return gulp.src('build/*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
@@ -68,7 +77,8 @@ gulp.task("copy", function () {
 
 gulp.task("css", function () {
   return gulp.src("source/css/style.css")
-    /*.pipe(gulp.dest("build/css"))*/
+    /*.pipe(decomment({trim: true}))*/
+      /*.pipe(gulp.dest("build/css"))*/
     //.pipe(csso())
     //.pipe(rename("style.min.css"))
     .pipe(gulp.dest("build/css"))
